@@ -29,7 +29,7 @@ int main() {
       case OFF_STATE:
         delay();
         if (switch_input(ON_OFF)) {
-          led_ctrl(GREEN, 1);
+          led_ctrl(RED, 1);
           next_state = STOP_STATE;
         } else {
           next_state = curr_state;

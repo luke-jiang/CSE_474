@@ -85,13 +85,13 @@ int main() {
 }
 
 void init_all() {
-  switch_init(ON_OFF);
-  switch_init(PASSNGR);
-  led_init(RED);
+  init(ON_OFF, 1);
+  init(PASSNGR, 1);
+  init(RED, 0);
   led_off(RED);
-  led_init(YELLOW);
+  init(YELLOW, 0);
   led_off(YELLOW);
-  led_init(GREEN);
+  init(GREEN, 0);
   led_off(GREEN);
 }
 

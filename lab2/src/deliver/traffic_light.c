@@ -9,6 +9,7 @@
 #include "driverlib/led_switch_driver.h"
 #include "driverlib/timer0.h"
 
+// define possible states
 typedef enum {
   OFF_STATE,
   GO_STATE,
@@ -16,13 +17,17 @@ typedef enum {
   STOP_STATE
 } State;
 
+// define possible events
 typedef enum {
   NO_PRESSED,
   PASSNGR_PRESSED,
   NO_PRESSED
 } Event;
 
+// initialize switches and LEDs
 void init_all();
+
+// Listeners at each state
 Event delay_go();
 Event delay_warn();
 Event delay_stop();
@@ -31,7 +36,7 @@ Event delay_off();
 int main() {
   State curr_state = OFF_STATE;
   State next_state;
-  init_all();  // initialize switches and leds
+  init_all();
   timer0_setup(SEC1, 0);
   Event status;
   while (1) {

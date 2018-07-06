@@ -196,6 +196,7 @@ Event delay_off() {
       if (!s_count) {
         timer0_ctrl(0);
         return ON_OFF_PRESSED;
+      }
     }
     timer0_clear();
   }

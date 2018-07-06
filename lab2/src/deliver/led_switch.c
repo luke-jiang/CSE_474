@@ -59,10 +59,10 @@ void init_port_f() {
   GPIO_F_DIR = RGB & ~SWITCH;
   GPIO_F_DEN = RGB | SWITCH;
   
-  GPIO_F_IM |= SWITCH;
-  GPIO_F_IBE |= SWITCH;
-  GPIO_F_IS = ~SWITCH;
-  EN0 |= (1 << 30);
-  GPIO_F_DATA = CLEAR;
-  GPIO_F_ICR |= SWITCH;
+  GPIO_F_IM |= SWITCH;    // enable interrupt mask for PF0 and PF4
+  GPIO_F_IBE |= SWITCH;   // both rising and falling edges can cause interrupt
+  GPIO_F_IS = ~SWITCH;    // set pins to be edge-sensitive
+  EN0 |= (1 << 30);       // enable GPIO Port F at NVIC
+  GPIO_F_DATA = CLEAR;    // clear data
+  GPIO_F_ICR |= SWITCH;   // acknowledge interrupt
 }

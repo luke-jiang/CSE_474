@@ -9,7 +9,7 @@
 #include "driverlib/led_switch_driver.h"
 #include "driverlib/timer0.h"
 
-// define possible states
+// Define possible states
 typedef enum {
   OFF_STATE,
   GO_STATE,
@@ -17,7 +17,7 @@ typedef enum {
   STOP_STATE
 } State;
 
-// define possible events
+// Define possible events
 typedef enum {
   NO_PRESSED,
   PASSNGR_PRESSED,
@@ -27,8 +27,10 @@ typedef enum {
 // Interrupt flag for timer0
 volatile int timer0_flag = 0;
 
-// initialize switches ans LEDs
+// Initialize switches ans LEDs
 void init_all();
+
+// Listeners at each state
 Event delay_go();
 Event delay_warn();
 Event delay_stop();
@@ -186,8 +188,7 @@ Event delay_stop() {
     } else {
       p_count--;
       if (!p_count) ret = PASSNGR_PRESSED;
-    }
-    
+    }    
     timer0_clear();
   }
   timer0_ctrl(0);

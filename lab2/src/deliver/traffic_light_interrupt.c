@@ -205,7 +205,10 @@ Event delay_off() {
       s_count = 2;
     } else {
       s_count--;
-      if (!s_count) return ON_OFF_PRESSED;
+      if (!s_count) {
+        timer0_ctrl(0);
+        return ON_OFF_PRESSED;
+      }
     }
     timer0_clear();
   }

@@ -4,13 +4,15 @@
 // 04/07/2018
 
 // When S1 is pressed, the LED turns red; when S2 is pressed,
-// the LED blue blinks every 1 second.
+// the blue LED blinks every 1 second.
 
 #include "driverlib/port_a.h"
 #include "driverlib/timer0.h"
 
+// Initialize port F with interrupt on PF0 and PF4 enabled.
 void init_port_f();
 
+// Binary semaphore for interrupt.
 volatile int flag = 0;
 
 void Handler_PF(void) {
@@ -56,12 +58,9 @@ void init_port_f() {
   GPIO_UR = SWITCH;
   GPIO_F_DIR = RGB & ~SWITCH;
   GPIO_F_DEN = RGB | SWITCH;
+  
   GPIO_F_IM |= SWITCH;
-  
   GPIO_F_IBE |= SWITCH;
-  //GPIO_F_IBE &= ~SWITCH;
-  //GPIO_F_IEV |= SWITCH;
-  
   GPIO_F_IS = ~SWITCH;
   EN0 |= (1 << 30);
   GPIO_F_DATA = CLEAR;

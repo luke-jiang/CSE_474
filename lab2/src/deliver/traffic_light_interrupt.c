@@ -107,11 +107,11 @@ void init_all() {
   init(ON_OFF, 1);
   init(PASSNGR, 1);
   init(RED, 0);
-  led_off(RED);
+  led_ctrl(RED, 0);
   init(YELLOW, 0);
-  led_off(YELLOW);
+  led_ctrl(YELLOW, 0);
   init(GREEN, 0);
-  led_off(GREEN);
+  led_ctrl(GREEN, 0);
 }
 
 Event delay_go() {

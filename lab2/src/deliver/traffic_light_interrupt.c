@@ -17,14 +17,17 @@ typedef enum {
   STOP_STATE
 } State;
 
+// define possible events
 typedef enum {
   NO_PRESSED,
   PASSNGR_PRESSED,
   NO_PRESSED
 } Event;
 
+// Interrupt flag for timer0
 volatile int timer0_flag = 0;
 
+// initialize switches ans LEDs
 void init_all();
 Event delay_go();
 Event delay_warn();
@@ -39,7 +42,7 @@ void Timer_Handler_0A() {
 int main() {
   State curr_state = OFF_STATE;
   State next_state;
-  init_all();  // initialize switches and leds
+  init_all();
   timer0_setup(SEC1, 1);
   Event status;
   while (1) {

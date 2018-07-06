@@ -1,3 +1,10 @@
+// CSE 474
+// Lab 2
+// Luke Jiang
+// 06/07/2018
+
+// This file is the implementation of timer0.h
+
 #include "timer0.h"
 
 void timer0_setup(uint32_t speed, int interrupt) {

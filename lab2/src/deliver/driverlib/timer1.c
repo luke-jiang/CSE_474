@@ -1,3 +1,10 @@
+// CSE 474
+// Lab 2
+// Luke Jiang
+// 06/07/2018
+
+// This file is the implementation of timer1.h
+
 #include "timer1.h"
 
 void timer1_setup(uint32_t speed, int interrupt) {

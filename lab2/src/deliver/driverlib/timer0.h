@@ -1,3 +1,10 @@
+// CSE 474
+// Lab 2
+// Luke Jiang
+// 06/07/2018
+
+// This header file is the driver for GPTM Timer A0
+
 #ifndef TIMER0_H
 #define TIMER0_H
 

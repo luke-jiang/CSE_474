@@ -1,3 +1,12 @@
+// CSE 474
+// Lab 2
+// Luke Jiang
+// 06/07/2018
+
+// This header file is the driver for GPIO Port A, which controls
+// two on-board pushbuttons and three LEDs. This file is an adapted
+// version of lab1/src/lab1a.h
+
 #ifndef PORT_A_H
 #define PORT_A_H
 

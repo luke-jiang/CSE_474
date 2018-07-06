@@ -1,4 +1,9 @@
+// CSE 474
+// Lab 2
+// Luke Jiang
+// 06/07/2018
 
+// This file is the implementation of led_switch_driver.h
 
 #include "led_switch_driver.h"
 

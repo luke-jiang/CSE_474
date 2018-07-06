@@ -2,16 +2,14 @@
 
 void timer0_setup(uint32_t speed, int interrupt) {
   RCGCTIMER |= 0x001;
-
   T0_CTL = TAEN_OFF;    // disable timer while configuring
   T0_CFG = 0x00;        // select 32-bit timer configuration
   T0_TAMR = 0x02;       // select countdown, periodic mode
   T0_TAILR = speed;     // set speed
-
   if (interrupt) {
-    T0_MIMR = 0x01;
-    EN0 |= (1 << 19);
-    T0_ICR |= 0x01;
+    T0_MIMR = 0x01;     // enable interrupt mask
+    EN0 |= (1 << 19);   // enable timer0 at NVIC
+    T0_ICR |= 0x01;     // clear timer
   }
 }
 

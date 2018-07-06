@@ -49,6 +49,7 @@
 #define GPIO_CR_UNLOCK 0x4C4F434B
 
 void timer0_setup();
+void timer0_ctrl();
 int time_out();
 void clear();
 void timer(int n);
@@ -91,11 +92,11 @@ void timer0_ctrl(int on) {
   else TMR0_CTL = TAEN_OFF;
 }
 
-int timer0_out() {
+int time_out() {
   return TMR0_RIS & 0x01;
 }
 
-void timer0_clear() {
+void clear() {
   TMR0_ICR |= 0x01;
 }
 

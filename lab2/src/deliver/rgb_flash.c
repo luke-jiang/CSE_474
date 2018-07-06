@@ -3,7 +3,7 @@
 // Luke Jiang
 // 04/07/2018
 
-// Implementing Section A LED Flashing.
+// Implementing Section A LED Flashing with a timer.
 
 #include "driverlib/timer0.h"
 #include "driverlib/port_a.h"
@@ -17,7 +17,7 @@ int main() {
   // clear all port F
   GPIO_F_DATA = CLEAR;
 
-  timer0_setup(SEC1, );
+  timer0_setup(SEC1, 0);
   timer0_ctrl(1);
   while (1) {
     while (!timer0_out());

@@ -22,10 +22,6 @@ typedef enum {
   NO_PRESSED
 } Event;
 
-#define ON_OFF_PRESSED  2
-#define PASSNGR_PRESSED 1
-#define NO_PRESSED      0
-
 void init_all();
 Event delay_go();
 Event delay_warn();

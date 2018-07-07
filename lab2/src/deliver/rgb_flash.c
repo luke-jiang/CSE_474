@@ -6,15 +6,13 @@
 // Implementing Section A LED Flashing with a timer.
 
 #include "driverlib/timer0.h"
-#include "driverlib/port_a.h"
+#include "driverlib/port_f.h"
 
 int main() {
-  // enable port F GPIO
+  // configure GPIO Port F
   RCGCGPIO = RCGCGPIO_F_ON;
-  // set three LEDs as outputs and enable digital
   GPIO_F_DEN = RGB;
   GPIO_F_DIR = RGB;
-  // clear all port F
   GPIO_F_DATA = CLEAR;
 
   timer0_setup(SEC1, 0);

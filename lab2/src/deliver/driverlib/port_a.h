@@ -3,12 +3,12 @@
 // Luke Jiang
 // 06/07/2018
 
-// This header file is the driver for GPIO Port A, which controls
+// This header file is the driver for GPIO Port F, which controls
 // two on-board pushbuttons and three LEDs. This file is an adapted
 // version of lab1/src/lab1a.h
 
-#ifndef PORT_A_H
-#define PORT_A_H
+#ifndef PORT_F_H
+#define PORT_F_H
 
 // Inputs to GPIO_F_DATA for configuring LEDs and switches.
 #define RED     0x02        // enable red LED

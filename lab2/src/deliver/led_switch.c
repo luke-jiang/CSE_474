@@ -6,7 +6,7 @@
 // When S1 is pressed, the LED turns red; when S2 is pressed,
 // the blue LED blinks every 1 second.
 
-#include "driverlib/port_a.h"
+#include "driverlib/port_f.h"
 #include "driverlib/timer0.h"
 
 // Initialize port F with interrupt on PF0 and PF4 enabled.

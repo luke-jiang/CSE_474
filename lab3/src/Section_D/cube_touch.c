@@ -114,20 +114,21 @@ void rotate(Point *cube, Point *circle, Point *rect) {
         LCD_PrintChar(' ');
         LCD_PrintInteger(newPos.y);
         LCD_PrintChar('\n');
-        if (abs(newPos.x - pos.x) > 10 || abs((newPos.y - pos.y) > 10)) {
-        	for (int j = 0; j < 2000000; j++);		// delay to avoid multiple reads on one touch
+        if (abs(newPos.x - pos.x) > 10 || abs(newPos.y - pos.y) > 10) {
+		// delay to avoid multiple reads on one touch
+        	for (int j = 0; j < 2000000; j++);		
         	coord(&newPos);
-			// wait until another valid touch happpens
-          	while (abs(newPos.x - pos.x) <= 20 && abs((newPos.y - pos.y) <= 20)) {
+		// wait until another valid touch happpens
+          	while (abs(newPos.x - pos.x) <= 10 && abs(newPos.y - pos.y) <= 10) {
             	coord(&newPos);
         	}
         }
         
-		// Draw black picture in the current location
+	// Draw black picture in the current location
         draw_rect(rect, BLACK, count % 4);
         draw_cube(cube, BLACK);
         
-		// update coordinates of the cube
+	// update coordinates of the cube
         for (int i = 0; i < 8; i++) {
         	new_p.x =  ( - (cube[i].y));
         	new_p.y =  ((cube[i].x));
@@ -135,7 +136,7 @@ void rotate(Point *cube, Point *circle, Point *rect) {
         	cube[i].y = new_p.y;   
         }
         
-		// update the center of the circle
+	// update the center of the circle
         circle->x = next_circle.x;
         circle->y = next_circle.y;
         

@@ -130,8 +130,8 @@ void rotate(Point *cube, Point *circle, Point *rect) {
 
   // update coordinates of the cube
   for (int i = 0; i < 8; i++) {
-    new_p.x =  ( - (cube[i].y));
-    new_p.y =  ((cube[i].x));
+    new_p.x = -(cube[i].y);
+    new_p.y = cube[i].x;
     cube[i].x = new_p.x;
     cube[i].y = new_p.y;   
   }
@@ -146,18 +146,18 @@ void rotate(Point *cube, Point *circle, Point *rect) {
 }
 
 void draw_cube(Point *cube,  unsigned short color) {
-  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[1].x+ ORIGINX, cube[1].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[2].x + ORIGINX, cube[2].y + ORIGINY, cube[3].x+ ORIGINX, cube[3].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[4].x + ORIGINX, cube[4].y + ORIGINY, cube[5].x+ ORIGINX, cube[5].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[6].x + ORIGINX, cube[6].y + ORIGINY, cube[7].x+ ORIGINX, cube[7].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[4].x+ ORIGINX, cube[4].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[1].x + ORIGINX, cube[1].y + ORIGINY, cube[5].x+ ORIGINX, cube[5].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[2].x + ORIGINX, cube[2].y + ORIGINY, cube[6].x+ ORIGINX, cube[6].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[3].x + ORIGINX, cube[3].y + ORIGINY, cube[7].x+ ORIGINX, cube[7].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[2].x+ ORIGINX, cube[2].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[1].x + ORIGINX, cube[1].y + ORIGINY, cube[3].x+ ORIGINX, cube[3].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[4].x + ORIGINX, cube[4].y + ORIGINY, cube[6].x+ ORIGINX, cube[6].y+ ORIGINY, color);
-  LCD_DrawLine1(cube[5].x + ORIGINX, cube[5].y + ORIGINY, cube[7].x+ ORIGINX, cube[7].y+ ORIGINY, color);    
+  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[1].x + ORIGINX, cube[1].y + ORIGINY, color);
+  LCD_DrawLine1(cube[2].x + ORIGINX, cube[2].y + ORIGINY, cube[3].x + ORIGINX, cube[3].y + ORIGINY, color);
+  LCD_DrawLine1(cube[4].x + ORIGINX, cube[4].y + ORIGINY, cube[5].x + ORIGINX, cube[5].y + ORIGINY, color);
+  LCD_DrawLine1(cube[6].x + ORIGINX, cube[6].y + ORIGINY, cube[7].x + ORIGINX, cube[7].y + ORIGINY, color);
+  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[4].x + ORIGINX, cube[4].y + ORIGINY, color);
+  LCD_DrawLine1(cube[1].x + ORIGINX, cube[1].y + ORIGINY, cube[5].x + ORIGINX, cube[5].y + ORIGINY, color);
+  LCD_DrawLine1(cube[2].x + ORIGINX, cube[2].y + ORIGINY, cube[6].x + ORIGINX, cube[6].y + ORIGINY, color);
+  LCD_DrawLine1(cube[3].x + ORIGINX, cube[3].y + ORIGINY, cube[7].x + ORIGINX, cube[7].y + ORIGINY, color);
+  LCD_DrawLine1(cube[0].x + ORIGINX, cube[0].y + ORIGINY, cube[2].x + ORIGINX, cube[2].y + ORIGINY, color);
+  LCD_DrawLine1(cube[1].x + ORIGINX, cube[1].y + ORIGINY, cube[3].x + ORIGINX, cube[3].y + ORIGINY, color);
+  LCD_DrawLine1(cube[4].x + ORIGINX, cube[4].y + ORIGINY, cube[6].x + ORIGINX, cube[6].y + ORIGINY, color);
+  LCD_DrawLine1(cube[5].x + ORIGINX, cube[5].y + ORIGINY, cube[7].x + ORIGINX, cube[7].y + ORIGINY, color);    
 }
 
 void LCD_DrawLine1(double startX, double startY, double endX, double endY, unsigned short color){

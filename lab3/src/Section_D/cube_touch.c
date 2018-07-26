@@ -97,50 +97,50 @@ void rotate(Point *cube, Point *circle, Point *rect) {
   int count = 0;
 
   while (1) {
-  // display current cube
-  draw_rect(rect, BLUE, count % 4);
-  draw_circle(circle, BLACK);
-  next_circle.x = -circle->y;
-  next_circle.y = circle->x;
-  draw_circle(&next_circle, BLACK);
-  draw_cube(cube, WHITE);
+    // display current cube
+    draw_rect(rect, BLUE, count % 4);
+    draw_circle(circle, BLACK);
+    next_circle.x = -circle->y;
+    next_circle.y = circle->x;
+    draw_circle(&next_circle, BLACK);
+    draw_cube(cube, WHITE);
 
-  // delay for displaying
-  for (int i = 0; i < 2000000; i++);
+    // delay for displaying
+    for (int i = 0; i < 2000000; i++);
 
-  // Check if a touch event has happened
-  coord(&newPos);
-  LCD_PrintInteger(newPos.x);
-  LCD_PrintChar(' ');
-  LCD_PrintInteger(newPos.y);
-  LCD_PrintChar('\n');
-  if (abs(newPos.x - pos.x) > 10 || abs(newPos.y - pos.y) > 10) {
-  // delay to avoid multiple reads on one touch
-  for (int j = 0; j < 2000000; j++);		
+    // Check if a touch event has happened
     coord(&newPos);
-    // wait until another valid touch happpens
-    while (abs(newPos.x - pos.x) <= 10 && abs(newPos.y - pos.y) <= 10) {
+    LCD_PrintInteger(newPos.x);
+    LCD_PrintChar(' ');
+    LCD_PrintInteger(newPos.y);
+    LCD_PrintChar('\n');
+    if (abs(newPos.x - pos.x) > 10 || abs(newPos.y - pos.y) > 10) {
+    // delay to avoid multiple reads on one touch
+    for (int j = 0; j < 2000000; j++);		
       coord(&newPos);
+      // wait until another valid touch happpens
+      while (abs(newPos.x - pos.x) <= 10 && abs(newPos.y - pos.y) <= 10) {
+        coord(&newPos);
+      }
     }
-  }
 
-  // Draw black picture in the current location
-  draw_rect(rect, BLACK, count % 4);
-  draw_cube(cube, BLACK);
+    // Draw black picture in the current location
+    draw_rect(rect, BLACK, count % 4);
+    draw_cube(cube, BLACK);
 
-  // update coordinates of the cube
-  for (int i = 0; i < 8; i++) {
-    new_p.x = -(cube[i].y);
-    new_p.y = cube[i].x;
-    cube[i].x = new_p.x;
-    cube[i].y = new_p.y;   
-  }
+    // update coordinates of the cube
+    for (int i = 0; i < 8; i++) {
+      new_p.x = -(cube[i].y);
+      new_p.y = cube[i].x;
+      cube[i].x = new_p.x;
+      cube[i].y = new_p.y;   
+    }
 
-  // update the center of the circle
-  circle->x = next_circle.x;
-  circle->y = next_circle.y;
+    // update the center of the circle
+    circle->x = next_circle.x;
+    circle->y = next_circle.y;
 
-  count++;
+    count++;
   }
 
 }

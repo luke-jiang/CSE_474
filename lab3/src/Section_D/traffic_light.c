@@ -96,13 +96,11 @@ int main() {
 }
 
 void init_all() {
-  init_LED(ON_OFF);
-  init_LED(PASSNGR);
-  init(RED, 0);
+  init_LED(RED);
   led_off(RED);
-  init(YELLOW, 0);
+  init_LED(YELLOW);
   led_off(YELLOW);
-  init(GREEN, 0);
+  init_LED(GREEN);
   led_off(GREEN);
 }
 

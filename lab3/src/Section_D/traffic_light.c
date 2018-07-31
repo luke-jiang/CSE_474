@@ -8,7 +8,7 @@
 // Use LCD to implement PASSNGR and STOP/START buttons
 
 #include <stdint.h>
-#include "inc/tm4c123gh6pm.h"
+// #include "inc/tm4c123gh6pm.h"
 #include "driverlib/timer0.h"
 #include "driverlib/SSD2119.h"
 #include "deiverlib/led_lcd.h"

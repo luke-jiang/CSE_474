@@ -8,6 +8,7 @@
 #ifndef LED_LCD_H
 #define LED_LCD_H
 
+#include "driverlib/tm4c123gh6pm.h"
 #include "driverlib/SSD2119.h"
 
 // Pins needed for the traffic light system.

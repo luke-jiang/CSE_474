@@ -45,6 +45,8 @@
         }
         input_count++;
         $("input_count").innerHTML = input_count;
+        
+        
     }
     
     // Ajax GET 

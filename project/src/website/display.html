@@ -4,25 +4,69 @@
 <!-- This is the HTML file for front-end display -->
 
 <html>
-    <head>
-        <title>CSE 474 Final Project</title>
-        <script src="display.js"></script>
-    </head>
-    <body>
-        <h1>CSE 474 Final Project</h1>
+  <head>
+    <title>CSE 474 Final Project</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="display.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="contianer">
+        <div id="branding">
+          <h1><span class="highlight">CSE 474 Final Project</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a herf="display.html">Home</a></li>
+            <li><a herf="intro.html">About</a></li>
+            <li><a herf="member.html">Member</a></li>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="contianer">
+        <h1>Group 2 Professional Web Design</h1>
+        <p>This is Group 2's web and catapult</p>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <h1>Explore The World of Catapult</h1>
+        <form>
+          <input type="email" placeholder="Key word...">
+          <button type="submit" class="button_1">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="picture">
+      <div class = "contianer">
+        <div class = "box">
+          <img src = "./catapult.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section id = "information">
+      <div class = "contianer">
         <h2>Catapult launcher</h2>
         <ul>
-            <li>X Coordinate: <span id="xcoord">default</span></li>
-            <li>Y Coordinate: <span id="ycoord">default</span></li>
-            <li>X AVG: <span id="xavg">default</span></li>
-            <li>Y AVG: <span id="yavg">default</span></li>
-            <li>Launch Time: <span id="ltime">default</span></li>
-            <li>Current Time: <span id="ctime">default</span></li>
-            <li>Input Count: <span id="input_count">default</span></li>
+          <li>X Coordinate: <span id="xcoord">default</span></li>
+          <li>Y Coordinate: <span id="ycoord">default</span></li>
+          <li>X AVG: <span id="xavg">default</span></li>
+          <li>Y AVG: <span id="yavg">default</span></li>
+          <li>Current Time: <span id="ctime">default</span></li>
+          <li>Input Count: <span id="input_count">default</span></li>
         </ul>
         <div>
-            Select a text file:
-            <input type="file" id="fileInput">
+          Select a text file:
+          <input type="file" id="fileInput">
         </div>
-    </body>
+      </div>
+    </section>
+
+  </body>
 </html>
+

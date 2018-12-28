@@ -8,8 +8,8 @@
 #ifndef LED_LCD_H
 #define LED_LCD_H
 
-#include "driverlib/tm4c123gh6pm.h"
-#include "driverlib/SSD2119.h"
+#include "tm4c123gh6pm.h"
+#include "SSD2119.h"
 
 // Pins needed for the traffic light system.
 #define ON_OFF         0x04     // P2 (start_stop)

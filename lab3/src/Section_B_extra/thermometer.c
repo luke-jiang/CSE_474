@@ -41,7 +41,7 @@ void UART0_Handler() {
         uart0_setup(BRD_80, DIVFRAC_80);
         timer0_setup(SEC1_80, 1);
     } else {                // 4MHz
-        sysclock_setup(MHZ_4;
+        sysclock_setup(MHZ_4);
         uart0_setup(BRD_4, DIVFRAC_4);
         timer0_setup(SEC1_4, 1);
     }
